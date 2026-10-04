@@ -5,21 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Prajwal Premdas — Full-Stack Developer</title>
 <meta name="description" content="Prajwal Premdas — full-stack developer in Chicago. Java, Spring Boot, Angular, Kafka, Kubernetes. Enterprise systems by day, homelab by night.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23000'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' fill='%23fff' text-anchor='middle'%3EPP%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#f5eeda">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23191510'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='26' fill='%23f5eeda' text-anchor='middle'%3EPP%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header class="nav" id="nav">
-  <a class="brand" href="#top" aria-label="Home">PP<span class="brand-dot">.</span></a>
+  <a class="brand" href="#top" aria-label="Home">
+    <span class="brand-mono">PP</span><span class="brand-name">Prajwal Premdas</span>
+  </a>
   <nav class="nav-links" id="navLinks" aria-label="Sections">
     <a href="#about">About</a>
-    <a href="#stack">Stack</a>
+    <a href="#skills">Skills</a>
     <a href="#work">Work</a>
-    <a href="#journey">Journey</a>
+    <a href="#experience">Experience</a>
+    <a href="#achievements">Achievements</a>
     <a href="#contact">Contact</a>
   </nav>
-  <a class="btn btn-small" href="mailto:prajwaldas.io@gmail.com">Hire me</a>
+  <a class="btn btn-pill btn-small" href="#contact">Let&rsquo;s talk</a>
   <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -29,54 +33,71 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-inner">
-      <p class="hero-kicker reveal">Chicago, IL &mdash; Full-Stack Developer</p>
-      <h1 class="hero-name reveal">PRAJWAL<br><span class="outline">PREMDAS</span></h1>
-      <p class="hero-tag reveal">Enterprise systems by day, homelab by night.<br>
-      6+ years building with Java, Spring Boot, Angular &amp; Kafka.</p>
-      <div class="hero-cta reveal">
-        <a class="btn" href="#work">See my work</a>
-        <a class="btn btn-ghost" href="#contact">Get in touch</a>
+    <div class="watermark" aria-hidden="true">PRAJWAL</div>
+    <div class="hero-portrait reveal">
+      <img src="img/prajwal.jpg" alt="Portrait of Prajwal Premdas">
+    </div>
+    <div class="hero-bottom">
+      <div class="hero-left reveal">
+        <p class="hero-name">PRAJWAL PREMDAS</p>
+        <h1 class="hero-headline">Full Stack<br>Developer</h1>
+        <p class="hero-tag">Enterprise systems by day, homelab by night.</p>
+      </div>
+      <div class="hero-right reveal">
+        <a class="btn btn-pill" href="#work">Explore work &rarr;</a>
+        <div class="hero-links">
+          <a href="#contact">Let&rsquo;s talk</a>
+          <a href="https://www.linkedin.com/in/prajwal-das" target="_blank" rel="noopener">LinkedIn &nearr;</a>
+        </div>
       </div>
     </div>
-    <div class="hero-photo reveal" aria-label="Prajwal Premdas">
-      <div class="photo-frame"><img src="img/prajwal.jpg" alt="Prajwal Premdas"></div>
-    </div>
-    <a class="scroll-cue" href="#about" aria-label="Scroll down"><span></span></a>
   </section>
 
-  <!-- TICKER -->
-  <div class="ticker" aria-hidden="true">
-    <div class="ticker-track" id="tickerTrack">
-      <span>Java</span><span>Spring Boot</span><span>Angular</span><span>TypeScript</span>
-      <span>Kafka</span><span>Kubernetes</span><span>Docker</span><span>GraphQL</span>
-      <span>PostgreSQL</span><span>Flutter</span><span>Python</span><span>AWS</span>
-    </div>
-  </div>
-
-  <!-- ABOUT / ID CARD -->
+  <!-- ABOUT / FLIPPABLE ID CARD -->
   <section class="section" id="about">
     <p class="section-kicker reveal">01 &mdash; About</p>
     <h2 class="section-title reveal">The human behind the commits</h2>
     <div class="about-grid">
-      <div class="idcard reveal" aria-label="Digital ID card">
-        <div class="idcard-head">
-          <span class="idcard-chip"></span>
-          <span class="idcard-label">DEVELOPER&nbsp;ID</span>
-        </div>
-        <div class="idcard-body">
-          <div class="idcard-photo"><img src="img/prajwal.jpg" alt="Prajwal Premdas"></div>
-          <div class="idcard-fields">
-            <p><span>Name</span>Prajwal Premdas</p>
-            <p><span>Role</span>Full-Stack Developer</p>
-            <p><span>Base</span>Chicago, IL</p>
-            <p><span>Since</span>2015</p>
-          </div>
-        </div>
-        <div class="idcard-foot">
-          <span class="idcard-barcode" aria-hidden="true"></span>
-          <span class="idcard-no">No. DEV&ndash;2015&ndash;PP</span>
-        </div>
+      <div class="idcard-wrap reveal">
+        <button class="idcard" id="idcard" aria-label="Developer ID card — activate to flip it over">
+          <span class="idcard-inner">
+            <span class="idcard-face idcard-front">
+              <span class="idcard-head">
+                <span class="idcard-chip"></span>
+                <span class="idcard-label">DEVELOPER&nbsp;ID</span>
+              </span>
+              <span class="idcard-body">
+                <span class="idcard-photo"><img src="img/prajwal.jpg" alt=""></span>
+                <span class="idcard-fields">
+                  <span class="idcard-field"><span class="f-label">Name</span><span class="f-val">Prajwal Premdas</span></span>
+                  <span class="idcard-field"><span class="f-label">Role</span><span class="f-val">Full-Stack Developer</span></span>
+                  <span class="idcard-field"><span class="f-label">Base</span><span class="f-val">Chicago, IL</span></span>
+                  <span class="idcard-field"><span class="f-label">Since</span><span class="f-val">2015</span></span>
+                </span>
+              </span>
+              <span class="idcard-foot">
+                <span class="idcard-barcode" aria-hidden="true"></span>
+                <span class="idcard-no">No. DEV&ndash;2015&ndash;PP</span>
+              </span>
+            </span>
+            <span class="idcard-face idcard-back">
+              <span class="idcard-back-inner">
+                <span class="idcard-label">QUICK&nbsp;FACTS</span>
+                <span class="idcard-back-rows">
+                  <span class="idcard-field"><span class="f-label">Email</span><span class="f-val">prajwaldas.io@gmail.com</span></span>
+                  <span class="idcard-field"><span class="f-label">LinkedIn</span><span class="f-val">/in/prajwal-das</span></span>
+                  <span class="idcard-field"><span class="f-label">GitHub</span><span class="f-val">@prajwal-das</span></span>
+                  <span class="idcard-field"><span class="f-label">Now</span><span class="f-val">Technical Consultant, AHEAD</span></span>
+                  <span class="idcard-field"><span class="f-label">After hours</span><span class="f-val">k3s homelab &amp; open source</span></span>
+                </span>
+              </span>
+            </span>
+          </span>
+        </button>
+        <p class="flip-hint" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/></svg>
+          Tap the card to flip it
+        </p>
       </div>
       <div class="about-text reveal">
         <p>I'm a full-stack developer with 6+ years of experience designing and shipping web applications end to end &mdash; from architecture to delivery.</p>
@@ -91,9 +112,9 @@
     </div>
   </section>
 
-  <!-- STACK / PERIODIC TABLE -->
-  <section class="section" id="stack">
-    <p class="section-kicker reveal">02 &mdash; Stack</p>
+  <!-- SKILLS / PERIODIC TABLE -->
+  <section class="section" id="skills">
+    <p class="section-kicker reveal">02 &mdash; Skills</p>
     <h2 class="section-title reveal">The periodic table of my stack</h2>
     <p class="section-sub reveal">Hover or tap an element for the story behind it.</p>
     <div class="ptable reveal" id="ptable" role="list"></div>
@@ -113,7 +134,7 @@
   <!-- WORK -->
   <section class="section" id="work">
     <p class="section-kicker reveal">03 &mdash; Work</p>
-    <h2 class="section-title reveal">Things I've built</h2>
+    <h2 class="section-title reveal">Things I&rsquo;ve built</h2>
     <p class="section-sub reveal">Day-job systems and night-lab projects.</p>
     <div class="cards">
       <article class="card reveal">
@@ -185,10 +206,37 @@
     </div>
   </section>
 
-  <!-- JOURNEY -->
-  <section class="section" id="journey">
-    <p class="section-kicker reveal">04 &mdash; Journey</p>
-    <h2 class="section-title reveal">Where I've been</h2>
+  <!-- ALWAYS LEARNING -->
+  <section class="section" id="learning">
+    <p class="section-kicker reveal">04 &mdash; Always learning</p>
+    <h2 class="section-title reveal">Always learning</h2>
+    <p class="section-sub reveal">What I&rsquo;m deepening right now &mdash; in the homelab and in production.</p>
+    <div class="cards">
+      <article class="card reveal">
+        <p class="card-tag">Homelab</p>
+        <h3>Kubernetes, the hard way</h3>
+        <p>Running my own k3s cluster: Tailscale networking, cert-manager, Traefik, CI-built arm64 images. Learning what breaks at 2am so it doesn&rsquo;t break at work.</p>
+        <p class="card-stack">k3s &middot; Tailscale &middot; Traefik &middot; GitHub Actions</p>
+      </article>
+      <article class="card reveal">
+        <p class="card-tag">Mobile</p>
+        <h3>Flutter &amp; Riverpod</h3>
+        <p>playHz is my classroom: background audio, offline downloads, clean architecture &mdash; ~14k lines of Dart and counting.</p>
+        <p class="card-stack">Flutter &middot; Riverpod &middot; just_audio</p>
+      </article>
+      <article class="card reveal">
+        <p class="card-tag">Backend</p>
+        <h3>FastAPI &amp; SQLite</h3>
+        <p>MacroPrep&rsquo;s backend: dry/cooked conversion, schema migrations, i18n. A small stack with sharp edges.</p>
+        <p class="card-stack">FastAPI &middot; SQLite &middot; Python</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <p class="section-kicker reveal">05 &mdash; Experience</p>
+    <h2 class="section-title reveal">Education &amp; experience</h2>
     <ol class="timeline">
       <li class="reveal">
         <div class="t-dot"></div>
@@ -241,20 +289,55 @@
     </ol>
   </section>
 
-  <!-- STATS -->
-  <section class="stats">
-    <div class="stat reveal"><p class="stat-n">10<span>+</span></p><p class="stat-l">years shipping code</p></div>
-    <div class="stat reveal"><p class="stat-n">6<span>+</span></p><p class="stat-l">years full-stack pro</p></div>
-    <div class="stat reveal"><p class="stat-n">4k<span>+</span></p><p class="stat-l">app downloads</p></div>
-    <div class="stat reveal"><p class="stat-n">12<span>+</span></p><p class="stat-l">services self-hosted</p></div>
+  <!-- ACHIEVEMENTS / HORIZONTAL STRIP -->
+  <section class="section" id="achievements">
+    <p class="section-kicker reveal">06 &mdash; Achievements</p>
+    <h2 class="section-title reveal">Proud moments</h2>
+    <p class="section-sub reveal">Scroll sideways &rarr;</p>
+    <div class="strip-wrap reveal">
+      <div class="strip" id="achStrip" tabindex="0" aria-label="Achievements — scroll horizontally">
+        <article class="ach-card">
+          <p class="ach-n">4,000<span>+</span></p>
+          <p class="ach-l">Play Store downloads of Bible Songs</p>
+        </article>
+        <article class="ach-card">
+          <p class="ach-n">12<span>+</span></p>
+          <p class="ach-l">Services self-hosted on my k3s home server</p>
+        </article>
+        <article class="ach-card">
+          <p class="ach-n">10<span>+</span></p>
+          <p class="ach-l">Years shipping code, end to end</p>
+        </article>
+        <article class="ach-card">
+          <p class="ach-n">6<span>+</span></p>
+          <p class="ach-l">Years as a full-stack professional</p>
+        </article>
+        <article class="ach-card">
+          <p class="ach-n">RTP</p>
+          <p class="ach-l">Liquidity watermarking shipped on Mastercard&rsquo;s real-time payments platform</p>
+        </article>
+        <article class="ach-card">
+          <p class="ach-n">3.9</p>
+          <p class="ach-l">MS Computer Science GPA, Illinois Tech</p>
+        </article>
+        <article class="ach-card">
+          <p class="ach-n">2</p>
+          <p class="ach-l">Apps released on the Play Store</p>
+        </article>
+      </div>
+      <div class="strip-nav" aria-hidden="true">
+        <button class="strip-btn" id="stripPrev" tabindex="-1">&larr;</button>
+        <button class="strip-btn" id="stripNext" tabindex="-1">&rarr;</button>
+      </div>
+    </div>
   </section>
 
   <!-- CONTACT -->
   <section class="section contact" id="contact">
-    <p class="section-kicker reveal">05 &mdash; Contact</p>
-    <h2 class="contact-title reveal">Let's build<br>something <span class="outline">good.</span></h2>
+    <p class="section-kicker reveal">07 &mdash; Contact</p>
+    <h2 class="contact-title reveal">Let&rsquo;s build<br>something <span class="outline-ink">good.</span></h2>
     <div class="contact-links reveal">
-      <a class="btn" href="mailto:prajwaldas.io@gmail.com">prajwaldas.io@gmail.com</a>
+      <a class="btn btn-pill" href="mailto:prajwaldas.io@gmail.com">prajwaldas.io@gmail.com</a>
     </div>
     <div class="contact-social reveal">
       <a href="https://www.linkedin.com/in/prajwal-das" target="_blank" rel="noopener">LinkedIn</a>

@@ -2,13 +2,15 @@
 
 Prajwal Premdas — personal portfolio site, live at https://profile.curiouspace.com.
 
-A hand-built, black-and-white, single-page site (plain HTML/CSS/JS, no
-frameworks): hero, about ID card, periodic-table-of-stack, projects,
-experience timeline, achievements, contact.
+A hand-built, single-page site (plain HTML/CSS/JS, no frameworks) styled
+after a warm-paper, monochrome portfolio design: giant watermark hero,
+flippable digital ID card, periodic-table-of-stack, project cards, an
+"always learning" section, experience timeline, sideways-scrolling
+achievements strip, contact.
 
 ## Layout
 
-- `src/` — the site: `index.html`, `styles.css`, `app.js`
+- `src/` — the site: `index.html`, `styles.css`, `app.js`, `img/prajwal.jpg`
 - `nginx/portfolio.conf` — nginx vhost (security headers + cache policy)
 - `Dockerfile` — bakes `src/` into `nginx:1.27-alpine`
 - `manifests/` — k3s manifests: namespace `profile`, Deployment (pinned to
@@ -33,6 +35,8 @@ Required repo secrets for the workflow: `DOCKERHUB_USERNAME` /
 
 ## Swapping the photo
 
-`src/index.html` has a `PHOTO:` comment marking the placeholder blocks in
-the hero and the ID card. Drop a `photo.jpg` in `src/` and replace the
-placeholder divs with `<img src="photo.jpg" alt="Prajwal Premdas">`.
+The headshot lives at `src/img/prajwal.jpg` (900px wide, resized with
+ffmpeg). It is referenced from the hero portrait, the hero is duplicated
+on the ID card front — update both `<img>` tags if the filename changes.
+Photos are rendered in grayscale via CSS (`filter: grayscale(1)`) to keep
+the monochrome theme; remove the filter for color.

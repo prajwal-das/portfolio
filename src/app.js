@@ -1,4 +1,5 @@
-/* Portfolio interactivity: nav, reveal-on-scroll, periodic table, mobile menu. */
+/* Portfolio interactivity: nav, reveal-on-scroll, ID card flip,
+   periodic table, achievements strip, mobile menu. */
 (function () {
   "use strict";
 
@@ -27,7 +28,7 @@
   $$(".reveal").forEach(function (el) { io.observe(el); });
 
   /* ---- active nav link ---- */
-  var sections = ["about", "stack", "work", "journey", "contact"].map(function (id) {
+  var sections = ["about", "skills", "work", "learning", "experience", "achievements", "contact"].map(function (id) {
     return document.getElementById(id);
   }).filter(Boolean);
   var links = $$(".nav-links a");
@@ -41,6 +42,29 @@
     });
   }, { rootMargin: "-40% 0px -55% 0px" });
   sections.forEach(function (s) { navIo.observe(s); });
+
+  /* ---- ID card 3D flip ---- */
+  var idcard = $("#idcard");
+  if (idcard) {
+    idcard.addEventListener("click", function () {
+      idcard.classList.toggle("flipped");
+    });
+  }
+
+  /* ---- achievements horizontal strip ---- */
+  var strip = $("#achStrip");
+  if (strip) {
+    var cardStep = function () {
+      var card = strip.querySelector(".ach-card");
+      return card ? card.offsetWidth + 16 : 260;
+    };
+    $("#stripPrev").addEventListener("click", function () {
+      strip.scrollBy({ left: -cardStep(), behavior: "smooth" });
+    });
+    $("#stripNext").addEventListener("click", function () {
+      strip.scrollBy({ left: cardStep(), behavior: "smooth" });
+    });
+  }
 
   /* ---- periodic table of stack ----
      sym: element symbol · n: atomic-number-style index · cat: category */
@@ -96,8 +120,4 @@
     b.addEventListener("mouseenter", function () { showDetail(b); });
     ptable.appendChild(b);
   });
-
-  /* ---- duplicate ticker content for a seamless loop ---- */
-  var track = $("#tickerTrack");
-  track.innerHTML += track.innerHTML;
 })();

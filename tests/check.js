@@ -13,12 +13,13 @@ const check = (cond, label) => {
   else { console.log("ok:", label); }
 };
 
-// Required section anchors
-["about", "stack", "work", "journey", "contact"].forEach((id) =>
+// Required section anchors (reel flow: hero → about → skills → work →
+// learning → experience → achievements → contact)
+["about", "skills", "work", "learning", "experience", "achievements", "contact"].forEach((id) =>
   check(html.includes(`id="${id}"`), `section #${id} present`));
 
 // Nav links match sections
-["#about", "#stack", "#work", "#journey", "#contact"].forEach((href) =>
+["#about", "#skills", "#work", "#experience", "#achievements", "#contact"].forEach((href) =>
   check(html.includes(`href="${href}"`), `nav link ${href} present`));
 
 // Strip HTML comments before scanning so doc-comments don't fake refs
@@ -42,9 +43,11 @@ check(html.includes("prajwaldas.io@gmail.com"), "contact email present");
 check(html.includes("linkedin.com/in/prajwal-das"), "linkedin link present");
 check(html.includes("Prajwal Premdas"), "name present");
 
-// JS wires the periodic table
+// JS wires the periodic table, the ID card flip, and the achievements strip
 const js = fs.readFileSync(path.join(SRC, "app.js"), "utf8");
 check(js.includes("ELEMENTS"), "periodic table data present");
+check(js.includes("idcard"), "ID card flip present");
+check(js.includes("achStrip"), "achievements strip present");
 
 if (failures) { console.error(`\n${failures} check(s) failed`); process.exit(1); }
 console.log("\nAll checks passed.");

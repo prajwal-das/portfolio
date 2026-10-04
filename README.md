@@ -3,14 +3,17 @@
 Prajwal Premdas — personal portfolio site, live at https://profile.curiouspace.com.
 
 A hand-built, single-page site (plain HTML/CSS/JS, no frameworks) styled
-after a warm-paper, monochrome portfolio design: giant watermark hero,
-flippable digital ID card, periodic-table-of-stack, project cards, an
-"always learning" section, experience timeline, sideways-scrolling
-achievements strip, contact.
+after the Instagram reel template: warm-paper monochrome theme, giant
+watermark hero with floating portrait, flippable digital ID card,
+periodic-table-of-stack with family filter tabs, expandable project
+panels with vertical labels, an "always learning" rows list, a vertical
+education & experience timeline with giant year numerals, a
+sideways-scrolling "proud moments" strip, contact.
 
 ## Layout
 
-- `src/` — the site: `index.html`, `styles.css`, `app.js`, `img/prajwal.jpg`
+- `src/` — the site: `index.html`, `styles.css`, `app.js`, `img/prajwal.jpg`,
+  `fonts/` (self-hosted Fraunces serif woff2 — keeps the no-external-resources rule)
 - `nginx/portfolio.conf` — nginx vhost (security headers + cache policy)
 - `Dockerfile` — bakes `src/` into `nginx:1.27-alpine`
 - `manifests/` — k3s manifests: namespace `profile`, Deployment (pinned to

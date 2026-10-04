@@ -5,8 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Prajwal Premdas — Full-Stack Developer</title>
 <meta name="description" content="Prajwal Premdas — full-stack developer in Chicago. Java, Spring Boot, Angular, Kafka, Kubernetes. Enterprise systems by day, homelab by night.">
-<meta name="theme-color" content="#f5eeda">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23191510'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='26' fill='%23f5eeda' text-anchor='middle'%3EPP%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#f6f1e7">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23191510'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='26' fill='%23f6f1e7' text-anchor='middle'%3EPP%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="fonts/Fraunces-VF.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -33,7 +34,7 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="watermark" aria-hidden="true">PRAJWAL</div>
+    <div class="watermark" id="watermark" aria-hidden="true">PRAJWAL</div>
     <div class="hero-portrait reveal">
       <img src="img/prajwal.jpg" alt="Portrait of Prajwal Premdas">
     </div>
@@ -53,11 +54,20 @@
     </div>
   </section>
 
-  <!-- ABOUT / FLIPPABLE ID CARD -->
+  <!-- ABOUT -->
   <section class="section" id="about">
-    <p class="section-kicker reveal">01 &mdash; About</p>
-    <h2 class="section-title reveal">The human behind the commits</h2>
+    <p class="section-kicker reveal">About</p>
     <div class="about-grid">
+      <div class="about-text reveal">
+        <h2 class="serif-title">Hi, I&rsquo;m Prajwal.</h2>
+        <p>I&rsquo;m a full-stack developer with 6+ years of experience designing and shipping web applications end to end &mdash; from architecture to delivery.</p>
+        <p>By day I&rsquo;m a Technical Consultant at AHEAD, working on Mastercard&rsquo;s real-time payments platform. By night I run a self-hosted k3s home server and build open-source apps: a macro-first meal planner, a Jellyfin music player, a Linear-backed todo PWA.</p>
+        <p>I like systems that are boring in production and fun to build.</p>
+        <div class="about-btns">
+          <a class="btn btn-ghost" href="https://github.com/prajwal-das" target="_blank" rel="noopener">GitHub &nearr;</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/prajwal-das" target="_blank" rel="noopener">LinkedIn &nearr;</a>
+        </div>
+      </div>
       <div class="idcard-wrap reveal">
         <button class="idcard" id="idcard" aria-label="Developer ID card — activate to flip it over">
           <span class="idcard-inner">
@@ -99,206 +109,61 @@
           Tap the card to flip it
         </p>
       </div>
-      <div class="about-text reveal">
-        <p>I'm a full-stack developer with 6+ years of experience designing and shipping web applications end to end &mdash; from architecture to delivery.</p>
-        <p>By day I'm a Technical Consultant at AHEAD, working on Mastercard's real-time payments platform. By night I run a self-hosted k3s home server and build open-source apps: a macro-first meal planner, a Jellyfin music player, a Linear-backed todo PWA.</p>
-        <p>I like systems that are boring in production and fun to build.</p>
-        <ul class="about-facts">
-          <li><strong>MS Computer Science</strong> &mdash; Illinois Institute of Technology, 2022</li>
-          <li><strong>BE Computer Science</strong> &mdash; Visvesvaraya Technological University, 2015</li>
-          <li><strong>Currently</strong> &mdash; Technical Consultant, AHEAD (Chicago)</li>
-        </ul>
-      </div>
     </div>
   </section>
 
   <!-- SKILLS / PERIODIC TABLE -->
   <section class="section" id="skills">
-    <p class="section-kicker reveal">02 &mdash; Skills</p>
-    <h2 class="section-title reveal">The periodic table of my stack</h2>
-    <p class="section-sub reveal">Hover or tap an element for the story behind it.</p>
-    <div class="ptable reveal" id="ptable" role="list"></div>
-    <div class="ptable-detail" id="ptableDetail" aria-live="polite">
-      <p class="ptable-hint">Select an element &uarr;</p>
-    </div>
-    <div class="ptable-legend reveal">
-      <span><i class="sw lang"></i>Languages</span>
-      <span><i class="sw front"></i>Frontend</span>
-      <span><i class="sw back"></i>Backend</span>
-      <span><i class="sw data"></i>Data</span>
-      <span><i class="sw msg"></i>Messaging</span>
-      <span><i class="sw ops"></i>DevOps</span>
+    <p class="section-kicker reveal">Skills</p>
+    <h2 class="serif-title reveal">The periodic table <em>of my stack.</em></h2>
+    <p class="section-sub reveal">Twenty-six elements in six families. Hover a tile to see its story &mdash; pick a family to light it up.</p>
+    <div class="ptabs reveal" id="ptabs" role="tablist" aria-label="Skill families"></div>
+    <div class="ptable-grid reveal">
+      <div class="ptable" id="ptable" role="list"></div>
+      <aside class="ptable-detail" id="ptableDetail" aria-live="polite">
+        <p class="ptable-hint">Hover an element &uarr;</p>
+      </aside>
     </div>
   </section>
 
   <!-- WORK -->
   <section class="section" id="work">
-    <p class="section-kicker reveal">03 &mdash; Work</p>
-    <h2 class="section-title reveal">Things I&rsquo;ve built</h2>
-    <p class="section-sub reveal">Day-job systems and night-lab projects.</p>
-    <div class="cards">
-      <article class="card reveal">
-        <p class="card-tag">AHEAD &middot; Mastercard</p>
-        <h3>Real-Time Payments &mdash; Liquidity System</h3>
-        <p>Watermarking for the liquidity system of Mastercard's RTP platform: Kafka-driven real-time threshold updates, Spring Cloud Bus eventing, Caffeine caching, mTLS across microservices.</p>
-        <p class="card-stack">Java &middot; Spring Boot &middot; Kafka &middot; Spring Cloud &middot; Oracle</p>
-      </article>
-      <article class="card reveal">
-        <p class="card-tag">Homelab</p>
-        <h3>Home Server &mdash; self-hosted k3s</h3>
-        <p>My own cluster on a headless Mac mini + Raspberry Pis: Jellyfin, Home Assistant, AdGuard, Postgres, Prometheus/Grafana, restic backups to S3 &mdash; all behind Tailscale, nothing public.</p>
-        <p class="card-stack">Kubernetes &middot; Docker &middot; Tailscale &middot; Traefik &middot; cert-manager</p>
-      </article>
-      <article class="card reveal">
-        <p class="card-tag">Open source</p>
-        <h3>MacroPrep</h3>
-        <p>Macro-first meal-prep app with real Indian food data. Flutter + FastAPI + SQLite, dry/cooked conversion, barcode scanning, EN + Hindi.</p>
-        <p class="card-stack">Flutter &middot; FastAPI &middot; SQLite &middot; Docker</p>
-      </article>
-      <article class="card reveal">
-        <p class="card-tag">Open source</p>
-        <h3>playHz</h3>
-        <p>Daily-driver Jellyfin music player for iOS: offline downloads, chapter support, background audio. ~14k lines of clean-architecture Dart.</p>
-        <p class="card-stack">Flutter &middot; Riverpod &middot; just_audio</p>
-      </article>
-      <article class="card reveal">
-        <p class="card-tag">SAP</p>
-        <h3>Ariba Guided Sourcing &mdash; Cost Breakdown</h3>
-        <p>JSON-driven Angular form framework and modular table components so buyers can capture supplier cost breakdowns inside sourcing events.</p>
-        <p class="card-stack">Angular &middot; Java &middot; Spring Boot &middot; SAP HANA</p>
-      </article>
-      <article class="card reveal">
-        <p class="card-tag">SAP</p>
-        <h3>Optimization Workbench</h3>
-        <p>Microservice storing and analyzing supplier bid details; GraphQL APIs plus native Angular web elements for bid visualization across teams.</p>
-        <p class="card-stack">GraphQL &middot; Angular 9 &middot; Spring Boot</p>
-      </article>
-      <article class="card reveal">
-        <p class="card-tag">Open source</p>
-        <h3>Feature Toggle as a Service</h3>
-        <p>Multi-tenant feature-flag service: Spring Boot auto-config library, annotation processing, JIRA integration, Postgres-backed per-tenant state.</p>
-        <p class="card-stack">Spring Boot &middot; PostgreSQL &middot; JIRA</p>
-      </article>
-      <article class="card reveal">
-        <p class="card-tag">Jamcracker</p>
-        <h3>Cloud Billing Platform</h3>
-        <p>Ingestion and settlement for cloud billing across AWS, Azure, GCP and OpenStack &mdash; adaptor libraries, Kafka pipelines, tuned SQL for monthly invoices.</p>
-        <p class="card-stack">Java &middot; Kafka &middot; SQL &middot; AWS &middot; Azure &middot; GCP</p>
-      </article>
-      <article class="card reveal">
-        <p class="card-tag">ISRO</p>
-        <h3>IRNSS Fleet Thermal Monitor</h3>
-        <p>Java Swing application pulling real-time temperature telemetry from 7 navigation satellites, with charts and variation alerts.</p>
-        <p class="card-stack">Java Swing &middot; Real-time telemetry</p>
-      </article>
-      <article class="card reveal">
-        <p class="card-tag">Homelab</p>
-        <h3>Todo PWA &middot; Media Uploader &middot; Vedic Astro</h3>
-        <p>A Linear-backed todo PWA, a Tailscale-only send-to-Jellyfin uploader, and a Vedic astrology app &mdash; all live on <span class="mono">*.curiouspace.com</span>, all CI-built, all mine.</p>
-        <p class="card-stack">Vanilla JS &middot; FastAPI &middot; Docker Hub CI</p>
-      </article>
-      <article class="card reveal">
-        <p class="card-tag">Personal</p>
-        <h3>Bible Songs &middot; PipPlanet</h3>
-        <p>Two Play Store releases: a Bible lyrics app with 4,000+ downloads, and PipPlanet, a minimalist endless mobile game.</p>
-        <p class="card-stack">Android &middot; Mobile</p>
-      </article>
-    </div>
+    <p class="section-kicker reveal">Work</p>
+    <h2 class="serif-title reveal">Things I&rsquo;ve <em>built.</em></h2>
+    <p class="section-sub reveal">Eleven projects across fintech, enterprise and the homelab. Hover a panel to open it.</p>
+    <div class="panels reveal" id="panels"></div>
   </section>
 
   <!-- ALWAYS LEARNING -->
   <section class="section" id="learning">
-    <p class="section-kicker reveal">04 &mdash; Always learning</p>
-    <h2 class="section-title reveal">Always learning</h2>
-    <p class="section-sub reveal">What I&rsquo;m deepening right now &mdash; in the homelab and in production.</p>
-    <div class="cards">
-      <article class="card reveal">
-        <p class="card-tag">Homelab</p>
-        <h3>Kubernetes, the hard way</h3>
-        <p>Running my own k3s cluster: Tailscale networking, cert-manager, Traefik, CI-built arm64 images. Learning what breaks at 2am so it doesn&rsquo;t break at work.</p>
-        <p class="card-stack">k3s &middot; Tailscale &middot; Traefik &middot; GitHub Actions</p>
-      </article>
-      <article class="card reveal">
-        <p class="card-tag">Mobile</p>
-        <h3>Flutter &amp; Riverpod</h3>
-        <p>playHz is my classroom: background audio, offline downloads, clean architecture &mdash; ~14k lines of Dart and counting.</p>
-        <p class="card-stack">Flutter &middot; Riverpod &middot; just_audio</p>
-      </article>
-      <article class="card reveal">
-        <p class="card-tag">Backend</p>
-        <h3>FastAPI &amp; SQLite</h3>
-        <p>MacroPrep&rsquo;s backend: dry/cooked conversion, schema migrations, i18n. A small stack with sharp edges.</p>
-        <p class="card-stack">FastAPI &middot; SQLite &middot; Python</p>
-      </article>
+    <div class="learn-grid">
+      <div class="reveal">
+        <p class="section-kicker">Learning</p>
+        <h2 class="serif-title">Always <em>learning.</em></h2>
+        <p class="section-sub">What I&rsquo;m deepening right now &mdash; in the homelab and in production.</p>
+      </div>
+      <ol class="learn-rows reveal" id="learnRows"></ol>
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
+  <!-- EXPERIENCE / TIMELINE -->
   <section class="section" id="experience">
-    <p class="section-kicker reveal">05 &mdash; Experience</p>
-    <h2 class="section-title reveal">Education &amp; experience</h2>
-    <ol class="timeline">
-      <li class="reveal">
-        <div class="t-dot"></div>
-        <div class="t-body">
-          <p class="t-when">Jan 2022 &mdash; Present</p>
-          <h3>Technical Consultant &mdash; AHEAD, Chicago</h3>
-          <p>Consulting on Mastercard's real-time payments platform: liquidity-system watermarking, Kafka streaming, Spring Cloud microservices, mTLS security.</p>
-        </div>
-      </li>
-      <li class="reveal">
-        <div class="t-dot"></div>
-        <div class="t-body">
-          <p class="t-when">2021 &mdash; 2022</p>
-          <h3>MS, Computer Science &mdash; Illinois Institute of Technology</h3>
-          <p>Master's in CS, GPA 3.9. Chicago.</p>
-        </div>
-      </li>
-      <li class="reveal">
-        <div class="t-dot"></div>
-        <div class="t-body">
-          <p class="t-when">Dec 2018 &mdash; Jan 2021</p>
-          <h3>Software Engineer &mdash; SAP, Bangalore</h3>
-          <p>Full-stack on SAP Ariba Direct Spend: cost-breakdown sourcing UI in Angular, optimization workbench microservice with GraphQL, SAP HANA, Docker.</p>
-        </div>
-      </li>
-      <li class="reveal">
-        <div class="t-dot"></div>
-        <div class="t-body">
-          <p class="t-when">Mar 2016 &mdash; Dec 2018</p>
-          <h3>Software Engineer &mdash; Jamcracker, Bangalore</h3>
-          <p>R&amp;D on cloud billing services &mdash; invoices, payments, and multi-cloud billing ingestion pipelines.</p>
-        </div>
-      </li>
-      <li class="reveal">
-        <div class="t-dot"></div>
-        <div class="t-body">
-          <p class="t-when">Jan 2015 &mdash; Jul 2015</p>
-          <h3>Intern &mdash; ISRO, Bangalore</h3>
-          <p>Built a Java Swing app monitoring temperature telemetry from 7 IRNSS satellites in real time.</p>
-        </div>
-      </li>
-      <li class="reveal">
-        <div class="t-dot"></div>
-        <div class="t-body">
-          <p class="t-when">2011 &mdash; 2015</p>
-          <h3>BE, Computer Science &mdash; Visvesvaraya Technological University</h3>
-          <p>Bachelor's in CS, GPA 3.5.</p>
-        </div>
-      </li>
-    </ol>
+    <p class="section-kicker reveal">Experience</p>
+    <h2 class="serif-title reveal">Education &amp; <em>experience.</em></h2>
+    <p class="section-sub reveal">Fifteen years from first lecture hall to real-time payments.</p>
+    <ol class="journey" id="journey"></ol>
   </section>
 
-  <!-- ACHIEVEMENTS / HORIZONTAL STRIP -->
+  <!-- ACHIEVEMENTS -->
   <section class="section" id="achievements">
-    <p class="section-kicker reveal">06 &mdash; Achievements</p>
-    <h2 class="section-title reveal">Proud moments</h2>
+    <p class="section-kicker reveal">Achievements</p>
+    <h2 class="serif-title reveal">Proud <em>moments.</em></h2>
     <p class="section-sub reveal">Scroll sideways &rarr;</p>
     <div class="strip-wrap reveal">
       <div class="strip" id="achStrip" tabindex="0" aria-label="Achievements — scroll horizontally">
         <article class="ach-card">
-          <p class="ach-n">4,000<span>+</span></p>
-          <p class="ach-l">Play Store downloads of Bible Songs</p>
+          <p class="ach-n">4000<span>+</span></p>
+          <p class="ach-l">Play Store downloads &mdash; Bible Songs</p>
         </article>
         <article class="ach-card">
           <p class="ach-n">12<span>+</span></p>
@@ -313,16 +178,12 @@
           <p class="ach-l">Years as a full-stack professional</p>
         </article>
         <article class="ach-card">
-          <p class="ach-n">RTP</p>
-          <p class="ach-l">Liquidity watermarking shipped on Mastercard&rsquo;s real-time payments platform</p>
+          <p class="ach-n">2</p>
+          <p class="ach-l">Apps released on the Play Store</p>
         </article>
         <article class="ach-card">
           <p class="ach-n">3.9</p>
           <p class="ach-l">MS Computer Science GPA, Illinois Tech</p>
-        </article>
-        <article class="ach-card">
-          <p class="ach-n">2</p>
-          <p class="ach-l">Apps released on the Play Store</p>
         </article>
       </div>
       <div class="strip-nav" aria-hidden="true">
@@ -334,8 +195,8 @@
 
   <!-- CONTACT -->
   <section class="section contact" id="contact">
-    <p class="section-kicker reveal">07 &mdash; Contact</p>
-    <h2 class="contact-title reveal">Let&rsquo;s build<br>something <span class="outline-ink">good.</span></h2>
+    <p class="section-kicker reveal">Contact</p>
+    <h2 class="serif-title contact-big reveal">Let&rsquo;s build something <em>together.</em></h2>
     <div class="contact-links reveal">
       <a class="btn btn-pill" href="mailto:prajwaldas.io@gmail.com">prajwaldas.io@gmail.com</a>
     </div>

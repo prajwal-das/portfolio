@@ -85,6 +85,14 @@
   /* ---- periodic table of stack ----
      Six families like the reel: Languages, Frontend, Backend, Databases, Tools, Core. */
   var FAMILIES = ["Languages", "Frontend", "Backend", "Databases", "Tools", "Core"];
+  var FAMCOLORS = {
+    "Languages": "#1d2748", "Frontend": "#333d5c", "Backend": "#c9a186",
+    "Databases": "#dcc0a6", "Tools": "#e9ddc2", "Core": "#f8f3e5"
+  };
+  var FAMINK = {
+    "Languages": "#f5f1e6", "Frontend": "#f5f1e6", "Backend": "#2a2118",
+    "Databases": "#2a2118", "Tools": "#2a2118", "Core": "#2a2118"
+  };
   var ELEMENTS = [
     { sym: "Ja", num: 1,  name: "Java",          cat: "Languages", d: "My first love and still my daily driver. Spring ecosystem, concurrency, the whole JVM." },
     { sym: "Ts", num: 2,  name: "TypeScript",    cat: "Languages", d: "Types save lives. Angular frontends, Node tooling, and everything in between." },
@@ -111,16 +119,23 @@
     { sym: "Rm", num: 23, name: "RabbitMQ",      cat: "Core",      d: "Reliable async messaging in the liquidity system." },
     { sym: "Aw", num: 24, name: "AWS",           cat: "Core",      d: "S3 restic backups, plus cloud billing work across AWS, Azure and GCP." },
     { sym: "Sd", num: 25, name: "System Design", cat: "Core",      d: "Distributed systems thinking — from RTP liquidity to homelab topology." },
-    { sym: "Ms", num: 26, name: "Microservices",cat: "Core",      d: "Decomposed, independently deployable services — the enterprise bread and butter." }
+    { sym: "Ms", num: 26, name: "Microservices",cat: "Core",      d: "Decomposed, independently deployable services — the enterprise bread and butter." },
+    { sym: "Rs", num: 27, name: "REST APIs",     cat: "Backend",   d: "Contract-first API design across enterprise platforms and homelab services." },
+    { sym: "Dy", num: 28, name: "DynamoDB",      cat: "Databases", d: "NoSQL at AWS scale, from the cloud-billing days." },
+    { sym: "Je", num: 29, name: "Jenkins",       cat: "Tools",     d: "CI pipelines before GitHub Actions took over the job." },
+    { sym: "Fb", num: 30, name: "Firebase",      cat: "Tools",     d: "Auth, hosting and realtime bits in earlier projects." },
+    { sym: "Lx", num: 31, name: "Linux",         cat: "Tools",     d: "The homelab runs on it — and so does everything I deploy." },
+    { sym: "Oa", num: 32, name: "OAuth2",        cat: "Core",      d: "Spring Security plus Okta on the payments platform." }
   ];
 
   var ptabs = $("#ptabs"), ptable = $("#ptable"), detail = $("#ptableDetail");
   var activeFamily = "All", pressed = null;
 
   function showDetail(name, sym, cat, desc) {
+    var bg = FAMCOLORS[cat] || "var(--pill)", fg = FAMINK[cat] || "var(--paper)";
     detail.innerHTML = '<span class="d-sym">' + sym + "</span>" +
       "<h3>" + name + "</h3>" +
-      '<span class="d-cat">' + cat + "</span><p>" + desc + "</p>";
+      '<span class="d-cat" style="background:' + bg + ";color:" + fg + '">' + cat + "</span><p>" + desc + "</p>";
   }
 
   function paintTiles() {
@@ -138,7 +153,7 @@
     t.setAttribute("role", "tab");
     t.setAttribute("aria-selected", fam === "All" ? "true" : "false");
     t.innerHTML = '<span class="sw" style="background:' +
-      (fam === "All" ? "var(--ink)" : "var(--tile-dark)") + '"></span>' + fam;
+      (fam === "All" ? "var(--ink)" : FAMCOLORS[fam]) + '"></span>' + fam;
     t.addEventListener("click", function () {
       activeFamily = fam;
       $$(".ptab", ptabs).forEach(function (x) {
@@ -149,13 +164,14 @@
     ptabs.appendChild(t);
   });
 
-  ELEMENTS.forEach(function (e) {
+  ELEMENTS.forEach(function (e, idx) {
     var b = document.createElement("button");
     b.type = "button";
-    b.className = "pelem lit";
+    b.className = "pelem lit fam-" + e.cat;
     b.setAttribute("role", "listitem");
     b.setAttribute("aria-pressed", "false");
     b._cat = e.cat;
+    b.style.setProperty("--i", idx);
     b.innerHTML = '<span class="num">' + String(e.num).padStart(2, "0") + "</span>" +
       '<span class="sym">' + e.sym + "</span>" +
       '<span class="nm">' + e.name + "</span>";
@@ -167,9 +183,23 @@
     };
     b.addEventListener("click", pick);
     b.addEventListener("mouseenter", pick);
+    b.addEventListener("animationend", function () { b.classList.add("done"); });
     ptable.appendChild(b);
   });
   showDetail(ELEMENTS[0].name, ELEMENTS[0].sym, ELEMENTS[0].cat, ELEMENTS[0].d);
+
+  /* stagger the tiles in when the grid scrolls into view */
+  (function () {
+    var start = function () { ptable.classList.add("tiles-in"); };
+    if ("IntersectionObserver" in window) {
+      var pio = new IntersectionObserver(function (es) {
+        es.forEach(function (en) {
+          if (en.isIntersecting) { start(); pio.disconnect(); }
+        });
+      }, { threshold: 0.12 });
+      pio.observe(ptable);
+    } else { start(); }
+  })();
 
   /* ---- work panels ---- */
   var PROJECTS = [

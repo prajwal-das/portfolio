@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prajwal Premdas — Full-Stack Developer</title>
+<meta name="description" content="Prajwal Premdas — full-stack developer in Chicago. Java, Spring Boot, Angular, Kafka, Kubernetes. Enterprise systems by day, homelab by night.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23000'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' fill='%23fff' text-anchor='middle'%3EPP%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="Home">PP<span class="brand-dot">.</span></a>
+  <nav class="nav-links" id="navLinks" aria-label="Sections">
+    <a href="#about">About</a>
+    <a href="#stack">Stack</a>
+    <a href="#work">Work</a>
+    <a href="#journey">Journey</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a class="btn btn-small" href="mailto:prajwaldas.io@gmail.com">Hire me</a>
+  <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-kicker reveal">Chicago, IL &mdash; Full-Stack Developer</p>
+      <h1 class="hero-name reveal">PRAJWAL<br><span class="outline">PREMDAS</span></h1>
+      <p class="hero-tag reveal">Enterprise systems by day, homelab by night.<br>
+      6+ years building with Java, Spring Boot, Angular &amp; Kafka.</p>
+      <div class="hero-cta reveal">
+        <a class="btn" href="#work">See my work</a>
+        <a class="btn btn-ghost" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <div class="hero-photo reveal" aria-label="Photo placeholder">
+      <!-- PHOTO: replace this div's content with an <img src="photo.jpg"> when the headshot is ready -->
+      <div class="photo-frame"><span class="photo-mono">PP</span><span class="photo-note">your photo here</span></div>
+    </div>
+    <a class="scroll-cue" href="#about" aria-label="Scroll down"><span></span></a>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track" id="tickerTrack">
+      <span>Java</span><span>Spring Boot</span><span>Angular</span><span>TypeScript</span>
+      <span>Kafka</span><span>Kubernetes</span><span>Docker</span><span>GraphQL</span>
+      <span>PostgreSQL</span><span>Flutter</span><span>Python</span><span>AWS</span>
+    </div>
+  </div>
+
+  <!-- ABOUT / ID CARD -->
+  <section class="section" id="about">
+    <p class="section-kicker reveal">01 &mdash; About</p>
+    <h2 class="section-title reveal">The human behind the commits</h2>
+    <div class="about-grid">
+      <div class="idcard reveal" aria-label="Digital ID card">
+        <div class="idcard-head">
+          <span class="idcard-chip"></span>
+          <span class="idcard-label">DEVELOPER&nbsp;ID</span>
+        </div>
+        <div class="idcard-body">
+          <div class="idcard-photo"><span>PP</span></div>
+          <div class="idcard-fields">
+            <p><span>Name</span>Prajwal Premdas</p>
+            <p><span>Role</span>Full-Stack Developer</p>
+            <p><span>Base</span>Chicago, IL</p>
+            <p><span>Since</span>2015</p>
+          </div>
+        </div>
+        <div class="idcard-foot">
+          <span class="idcard-barcode" aria-hidden="true"></span>
+          <span class="idcard-no">No. DEV&ndash;2015&ndash;PP</span>
+        </div>
+      </div>
+      <div class="about-text reveal">
+        <p>I'm a full-stack developer with 6+ years of experience designing and shipping web applications end to end &mdash; from architecture to delivery.</p>
+        <p>By day I'm a Technical Consultant at AHEAD, working on Mastercard's real-time payments platform. By night I run a self-hosted k3s home server and build open-source apps: a macro-first meal planner, a Jellyfin music player, a Linear-backed todo PWA.</p>
+        <p>I like systems that are boring in production and fun to build.</p>
+        <ul class="about-facts">
+          <li><strong>MS Computer Science</strong> &mdash; Illinois Institute of Technology, 2022</li>
+          <li><strong>BE Computer Science</strong> &mdash; Visvesvaraya Technological University, 2015</li>
+          <li><strong>Currently</strong> &mdash; Technical Consultant, AHEAD (Chicago)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK / PERIODIC TABLE -->
+  <section class="section" id="stack">
+    <p class="section-kicker reveal">02 &mdash; Stack</p>
+    <h2 class="section-title reveal">The periodic table of my stack</h2>
+    <p class="section-sub reveal">Hover or tap an element for the story behind it.</p>
+    <div class="ptable reveal" id="ptable" role="list"></div>
+    <div class="ptable-detail" id="ptableDetail" aria-live="polite">
+      <p class="ptable-hint">Select an element &uarr;</p>
+    </div>
+    <div class="ptable-legend reveal">
+      <span><i class="sw lang"></i>Languages</span>
+      <span><i class="sw front"></i>Frontend</span>
+      <span><i class="sw back"></i>Backend</span>
+      <span><i class="sw data"></i>Data</span>
+      <span><i class="sw msg"></i>Messaging</span>
+      <span><i class="sw ops"></i>DevOps</span>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="section" id="work">
+    <p class="section-kicker reveal">03 &mdash; Work</p>
+    <h2 class="section-title reveal">Things I've built</h2>
+    <p class="section-sub reveal">Day-job systems and night-lab projects.</p>
+    <div class="cards">
+      <article class="card reveal">
+        <p class="card-tag">AHEAD &middot; Mastercard</p>
+        <h3>Real-Time Payments &mdash; Liquidity System</h3>
+        <p>Watermarking for the liquidity system of Mastercard's RTP platform: Kafka-driven real-time threshold updates, Spring Cloud Bus eventing, Caffeine caching, mTLS across microservices.</p>
+        <p class="card-stack">Java &middot; Spring Boot &middot; Kafka &middot; Spring Cloud &middot; Oracle</p>
+      </article>
+      <article class="card reveal">
+        <p class="card-tag">Homelab</p>
+        <h3>Home Server &mdash; self-hosted k3s</h3>
+        <p>My own cluster on a headless Mac mini + Raspberry Pis: Jellyfin, Home Assistant, AdGuard, Postgres, Prometheus/Grafana, restic backups to S3 &mdash; all behind Tailscale, nothing public.</p>
+        <p class="card-stack">Kubernetes &middot; Docker &middot; Tailscale &middot; Traefik &middot; cert-manager</p>
+      </article>
+      <article class="card reveal">
+        <p class="card-tag">Open source</p>
+        <h3>MacroPrep</h3>
+        <p>Macro-first meal-prep app with real Indian food data. Flutter + FastAPI + SQLite, dry/cooked conversion, barcode scanning, EN + Hindi.</p>
+        <p class="card-stack">Flutter &middot; FastAPI &middot; SQLite &middot; Docker</p>
+      </article>
+      <article class="card reveal">
+        <p class="card-tag">Open source</p>
+        <h3>playHz</h3>
+        <p>Daily-driver Jellyfin music player for iOS: offline downloads, chapter support, background audio. ~14k lines of clean-architecture Dart.</p>
+        <p class="card-stack">Flutter &middot; Riverpod &middot; just_audio</p>
+      </article>
+      <article class="card reveal">
+        <p class="card-tag">SAP</p>
+        <h3>Ariba Guided Sourcing &mdash; Cost Breakdown</h3>
+        <p>JSON-driven Angular form framework and modular table components so buyers can capture supplier cost breakdowns inside sourcing events.</p>
+        <p class="card-stack">Angular &middot; Java &middot; Spring Boot &middot; SAP HANA</p>
+      </article>
+      <article class="card reveal">
+        <p class="card-tag">SAP</p>
+        <h3>Optimization Workbench</h3>
+        <p>Microservice storing and analyzing supplier bid details; GraphQL APIs plus native Angular web elements for bid visualization across teams.</p>
+        <p class="card-stack">GraphQL &middot; Angular 9 &middot; Spring Boot</p>
+      </article>
+      <article class="card reveal">
+        <p class="card-tag">Open source</p>
+        <h3>Feature Toggle as a Service</h3>
+        <p>Multi-tenant feature-flag service: Spring Boot auto-config library, annotation processing, JIRA integration, Postgres-backed per-tenant state.</p>
+        <p class="card-stack">Spring Boot &middot; PostgreSQL &middot; JIRA</p>
+      </article>
+      <article class="card reveal">
+        <p class="card-tag">Jamcracker</p>
+        <h3>Cloud Billing Platform</h3>
+        <p>Ingestion and settlement for cloud billing across AWS, Azure, GCP and OpenStack &mdash; adaptor libraries, Kafka pipelines, tuned SQL for monthly invoices.</p>
+        <p class="card-stack">Java &middot; Kafka &middot; SQL &middot; AWS &middot; Azure &middot; GCP</p>
+      </article>
+      <article class="card reveal">
+        <p class="card-tag">ISRO</p>
+        <h3>IRNSS Fleet Thermal Monitor</h3>
+        <p>Java Swing application pulling real-time temperature telemetry from 7 navigation satellites, with charts and variation alerts.</p>
+        <p class="card-stack">Java Swing &middot; Real-time telemetry</p>
+      </article>
+      <article class="card reveal">
+        <p class="card-tag">Homelab</p>
+        <h3>Todo PWA &middot; Media Uploader &middot; Vedic Astro</h3>
+        <p>A Linear-backed todo PWA, a Tailscale-only send-to-Jellyfin uploader, and a Vedic astrology app &mdash; all live on <span class="mono">*.curiouspace.com</span>, all CI-built, all mine.</p>
+        <p class="card-stack">Vanilla JS &middot; FastAPI &middot; Docker Hub CI</p>
+      </article>
+      <article class="card reveal">
+        <p class="card-tag">Personal</p>
+        <h3>Bible Songs &middot; PipPlanet</h3>
+        <p>Two Play Store releases: a Bible lyrics app with 4,000+ downloads, and PipPlanet, a minimalist endless mobile game.</p>
+        <p class="card-stack">Android &middot; Mobile</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- JOURNEY -->
+  <section class="section" id="journey">
+    <p class="section-kicker reveal">04 &mdash; Journey</p>
+    <h2 class="section-title reveal">Where I've been</h2>
+    <ol class="timeline">
+      <li class="reveal">
+        <div class="t-dot"></div>
+        <div class="t-body">
+          <p class="t-when">Jan 2022 &mdash; Present</p>
+          <h3>Technical Consultant &mdash; AHEAD, Chicago</h3>
+          <p>Consulting on Mastercard's real-time payments platform: liquidity-system watermarking, Kafka streaming, Spring Cloud microservices, mTLS security.</p>
+        </div>
+      </li>
+      <li class="reveal">
+        <div class="t-dot"></div>
+        <div class="t-body">
+          <p class="t-when">2021 &mdash; 2022</p>
+          <h3>MS, Computer Science &mdash; Illinois Institute of Technology</h3>
+          <p>Master's in CS, GPA 3.9. Chicago.</p>
+        </div>
+      </li>
+      <li class="reveal">
+        <div class="t-dot"></div>
+        <div class="t-body">
+          <p class="t-when">Dec 2018 &mdash; Jan 2021</p>
+          <h3>Software Engineer &mdash; SAP, Bangalore</h3>
+          <p>Full-stack on SAP Ariba Direct Spend: cost-breakdown sourcing UI in Angular, optimization workbench microservice with GraphQL, SAP HANA, Docker.</p>
+        </div>
+      </li>
+      <li class="reveal">
+        <div class="t-dot"></div>
+        <div class="t-body">
+          <p class="t-when">Mar 2016 &mdash; Dec 2018</p>
+          <h3>Software Engineer &mdash; Jamcracker, Bangalore</h3>
+          <p>R&amp;D on cloud billing services &mdash; invoices, payments, and multi-cloud billing ingestion pipelines.</p>
+        </div>
+      </li>
+      <li class="reveal">
+        <div class="t-dot"></div>
+        <div class="t-body">
+          <p class="t-when">Jan 2015 &mdash; Jul 2015</p>
+          <h3>Intern &mdash; ISRO, Bangalore</h3>
+          <p>Built a Java Swing app monitoring temperature telemetry from 7 IRNSS satellites in real time.</p>
+        </div>
+      </li>
+      <li class="reveal">
+        <div class="t-dot"></div>
+        <div class="t-body">
+          <p class="t-when">2011 &mdash; 2015</p>
+          <h3>BE, Computer Science &mdash; Visvesvaraya Technological University</h3>
+          <p>Bachelor's in CS, GPA 3.5.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="stat reveal"><p class="stat-n">10<span>+</span></p><p class="stat-l">years shipping code</p></div>
+    <div class="stat reveal"><p class="stat-n">6<span>+</span></p><p class="stat-l">years full-stack pro</p></div>
+    <div class="stat reveal"><p class="stat-n">4k<span>+</span></p><p class="stat-l">app downloads</p></div>
+    <div class="stat reveal"><p class="stat-n">12<span>+</span></p><p class="stat-l">services self-hosted</p></div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact" id="contact">
+    <p class="section-kicker reveal">05 &mdash; Contact</p>
+    <h2 class="contact-title reveal">Let's build<br>something <span class="outline">good.</span></h2>
+    <div class="contact-links reveal">
+      <a class="btn" href="mailto:prajwaldas.io@gmail.com">prajwaldas.io@gmail.com</a>
+    </div>
+    <div class="contact-social reveal">
+      <a href="https://www.linkedin.com/in/prajwal-das" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/prajwal-das" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>&copy; <span id="year">2026</span> Prajwal Premdas &mdash; Chicago, IL</p>
+  <p class="mono">Built by hand. No frameworks were harmed.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

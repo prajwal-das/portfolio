@@ -1,0 +1,61 @@
+# Portfolio — Prajwal's personal site at https://profile.curiouspace.com
+#
+# Stateless static site: the app image (curiouspace/portfolio, built from
+# Dockerfile + src/ by .github/workflows/build-push.yml) serves the site
+# via nginx. No backend.
+#
+# Deploy is manual: merge to main -> GitHub Action builds + pushes
+# curiouspace/portfolio:latest to Docker Hub, then run
+#   kubectl rollout restart deployment/portfolio -n profile
+# The Deployment uses imagePullPolicy: Always so the restarted pod pulls
+# the freshly published image.
+#
+# Install:
+#   kubectl apply -f manifests/
+# Then open https://profile.curiouspace.com
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: profile
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: portfolio
+  namespace: profile
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: portfolio
+  template:
+    metadata:
+      labels:
+        app: portfolio
+    spec:
+      nodeSelector:
+        kubernetes.io/hostname: m1air
+      containers:
+        - name: web
+          image: curiouspace/portfolio:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 25m
+              memory: 32Mi
+            limits:
+              memory: 64Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: portfolio
+  namespace: profile
+spec:
+  selector:
+    app: portfolio
+  ports:
+    - port: 80
+      targetPort: 80

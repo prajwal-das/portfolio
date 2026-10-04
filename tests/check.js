@@ -43,11 +43,19 @@ check(html.includes("prajwaldas.io@gmail.com"), "contact email present");
 check(html.includes("linkedin.com/in/prajwal-das"), "linkedin link present");
 check(html.includes("Prajwal Premdas"), "name present");
 
-// JS wires the periodic table, the ID card flip, and the achievements strip
+// JS wires the periodic table, family filters, the ID card flip,
+// the work panels, the journey timeline, and the achievements strip
 const js = fs.readFileSync(path.join(SRC, "app.js"), "utf8");
 check(js.includes("ELEMENTS"), "periodic table data present");
+check(js.includes("FAMILIES"), "family filter tabs present");
 check(js.includes("idcard"), "ID card flip present");
+check(js.includes("PROJECTS"), "work panels data present");
+check(js.includes("STOPS"), "journey timeline data present");
 check(js.includes("achStrip"), "achievements strip present");
+
+// Self-hosted serif font present (no external font loads)
+check(fs.existsSync(path.join(SRC, "fonts", "Fraunces-VF.woff2")), "serif font present");
+check(html.includes("Fraunces-VF.woff2"), "font preloaded");
 
 if (failures) { console.error(`\n${failures} check(s) failed`); process.exit(1); }
 console.log("\nAll checks passed.");

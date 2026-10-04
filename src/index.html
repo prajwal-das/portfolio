@@ -7,7 +7,7 @@
 <meta name="description" content="Prajwal Premdas — full-stack developer in Chicago. Java, Spring Boot, Angular, Kafka, Kubernetes. Enterprise systems by day, homelab by night.">
 <meta name="theme-color" content="#f6f1e7">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23191510'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='26' fill='%23f6f1e7' text-anchor='middle'%3EPP%3C/text%3E%3C/svg%3E">
-<link rel="preload" href="fonts/Fraunces-VF.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/PlayfairDisplay-VF.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -69,46 +69,57 @@
         </div>
       </div>
       <div class="idcard-wrap reveal">
-        <button class="idcard" id="idcard" aria-label="Developer ID card — activate to flip it over">
+        <div class="badge-sway">
+          <div class="lanyard" aria-hidden="true"><span class="strap"></span><span class="ring"></span></div>
+          <button class="idcard" id="idcard" aria-label="Developer ID card — activate to flip it over">
           <span class="idcard-inner">
             <span class="idcard-face idcard-front">
-              <span class="idcard-head">
-                <span class="idcard-chip"></span>
-                <span class="idcard-label">DEVELOPER&nbsp;ID</span>
+              <span class="badge-head">
+                <span class="badge-mono">PP</span>
+                <span class="badge-head-t"><span class="badge-title">DEVELOPER ID</span><span class="badge-sub">Portfolio &middot; 2026</span></span>
               </span>
-              <span class="idcard-body">
-                <span class="idcard-photo"><img src="img/prajwal.jpg" alt=""></span>
-                <span class="idcard-fields">
-                  <span class="idcard-field"><span class="f-label">Name</span><span class="f-val">Prajwal Premdas</span></span>
-                  <span class="idcard-field"><span class="f-label">Role</span><span class="f-val">Full-Stack Developer</span></span>
-                  <span class="idcard-field"><span class="f-label">Base</span><span class="f-val">Chicago, IL</span></span>
-                  <span class="idcard-field"><span class="f-label">Since</span><span class="f-val">2015</span></span>
-                </span>
+              <span class="badge-photo"><img src="img/prajwal.jpg" alt=""></span>
+              <span class="badge-name">PRAJWAL PREMDAS</span>
+              <span class="badge-role">Full-Stack Developer</span>
+              <span class="badge-meta">
+                <span class="badge-field"><span class="f-label">ID No</span><span class="f-val">PP-0001</span></span>
+                <span class="badge-field"><span class="f-label">Dept</span><span class="f-val">Engineering</span></span>
+                <span class="badge-field"><span class="f-label">Valid till</span><span class="f-val">2027</span></span>
               </span>
-              <span class="idcard-foot">
-                <span class="idcard-barcode" aria-hidden="true"></span>
-                <span class="idcard-no">No. DEV&ndash;2015&ndash;PP</span>
-              </span>
+              <span class="badge-barcode" aria-hidden="true"></span>
             </span>
             <span class="idcard-face idcard-back">
-              <span class="idcard-back-inner">
-                <span class="idcard-label">QUICK&nbsp;FACTS</span>
-                <span class="idcard-back-rows">
-                  <span class="idcard-field"><span class="f-label">Email</span><span class="f-val">prajwaldas.io@gmail.com</span></span>
-                  <span class="idcard-field"><span class="f-label">LinkedIn</span><span class="f-val">/in/prajwal-das</span></span>
-                  <span class="idcard-field"><span class="f-label">GitHub</span><span class="f-val">@prajwal-das</span></span>
-                  <span class="idcard-field"><span class="f-label">Now</span><span class="f-val">Technical Consultant, AHEAD</span></span>
-                  <span class="idcard-field"><span class="f-label">After hours</span><span class="f-val">k3s homelab &amp; open source</span></span>
-                </span>
+              <span class="badge-head">
+                <span class="badge-mono">PP</span>
+                <span class="badge-head-t"><span class="badge-title">QUICK FACTS</span><span class="badge-sub">Tap to flip back</span></span>
+              </span>
+              <span class="idcard-back-rows">
+                <span class="idcard-field"><span class="f-label">Email</span><span class="f-val">prajwaldas.io@gmail.com</span></span>
+                <span class="idcard-field"><span class="f-label">LinkedIn</span><span class="f-val">/in/prajwal-das</span></span>
+                <span class="idcard-field"><span class="f-label">GitHub</span><span class="f-val">@prajwal-das</span></span>
+                <span class="idcard-field"><span class="f-label">Now</span><span class="f-val">Technical Consultant, AHEAD</span></span>
+                <span class="idcard-field"><span class="f-label">After hours</span><span class="f-val">k3s homelab &amp; open source</span></span>
               </span>
             </span>
           </span>
-        </button>
+          </button>
+        </div>
         <p class="flip-hint" aria-hidden="true">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/></svg>
           Tap the card to flip it
         </p>
       </div>
+      <aside class="quick-facts reveal">
+        <p class="qf-kicker">Quick facts</p>
+        <dl class="qf-rows">
+          <div class="qf-row"><dt>Based in</dt><dd>Chicago, IL</dd></div>
+          <div class="qf-row"><dt>Working</dt><dd>Technical Consultant, AHEAD</dd></div>
+          <div class="qf-row"><dt>Stack</dt><dd>Java &middot; Spring &middot; Angular</dd></div>
+          <div class="qf-row"><dt>After hours</dt><dd>k3s homelab &amp; open source</dd></div>
+          <div class="qf-row"><dt>Focus</dt><dd>Full-stack &middot; homelab</dd></div>
+        </dl>
+        <p class="qf-quote">&ldquo;Boring in production, fun to build.&rdquo;</p>
+      </aside>
     </div>
   </section>
 
@@ -116,7 +127,7 @@
   <section class="section" id="skills">
     <p class="section-kicker reveal">Skills</p>
     <h2 class="serif-title reveal">The periodic table <em>of my stack.</em></h2>
-    <p class="section-sub reveal">Twenty-six elements in six families. Hover a tile to see its story &mdash; pick a family to light it up.</p>
+    <p class="section-sub reveal">Thirty-two elements in six families. Hover a tile to see its story &mdash; or pick a family to light it up.</p>
     <div class="ptabs reveal" id="ptabs" role="tablist" aria-label="Skill families"></div>
     <div class="ptable-grid reveal">
       <div class="ptable" id="ptable" role="list"></div>

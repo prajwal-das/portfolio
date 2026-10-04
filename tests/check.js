@@ -54,8 +54,8 @@ check(js.includes("STOPS"), "journey timeline data present");
 check(js.includes("achStrip"), "achievements strip present");
 
 // Self-hosted serif font present (no external font loads)
-check(fs.existsSync(path.join(SRC, "fonts", "Fraunces-VF.woff2")), "serif font present");
-check(html.includes("Fraunces-VF.woff2"), "font preloaded");
+check(fs.existsSync(path.join(SRC, "fonts", "PlayfairDisplay-VF.woff2")), "serif font present");
+check(html.includes("PlayfairDisplay-VF.woff2"), "font preloaded");
 
 if (failures) { console.error(`\n${failures} check(s) failed`); process.exit(1); }
 console.log("\nAll checks passed.");

@@ -253,6 +253,7 @@ a { color: inherit; }
   .nav-links.open { display: flex; }
   .nav-links a { padding: 1rem 1.4rem; border-top: 1px solid var(--line); }
   .section { padding: 4rem 1.2rem; }
+  .scroll-cue { display: none; }
   .stats { grid-template-columns: 1fr 1fr; }
   .stat { border-left: 0; border-top: 1px solid var(--line); padding: 1.6rem .5rem; }
   .stat:nth-child(-n+2) { border-top: 0; }

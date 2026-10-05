@@ -1,6 +1,6 @@
 # portfolio
 
-Prajwal Premdas — personal portfolio site, live at https://profile.curiouspace.com.
+Prajwal Premdas — personal portfolio site, live at https://prajwal.curiouspace.com.
 
 A hand-built, single-page site (plain HTML/CSS/JS, no frameworks) styled
 after the Instagram reel template: warm-paper monochrome theme, Playfair
@@ -19,14 +19,14 @@ sideways-scrolling "proud moments" strip, contact.
 - `Dockerfile` — bakes `src/` into `nginx:1.27-alpine`
 - `manifests/` — k3s manifests: namespace `profile`, Deployment (pinned to
   m1air), Service, cert-manager Certificate, Traefik IngressRoute for
-  `profile.curiouspace.com`
+  `prajwal.curiouspace.com`
 - `.github/workflows/pages.yml` — merge to main: run `tests/check.js`,
-  deploy `src/` to GitHub Pages (custom domain `profile.curiouspace.com`)
+  deploy `src/` to GitHub Pages (custom domain `prajwal.curiouspace.com`)
 
 ## Deploy
 
 Automatic: every merge to main runs `tests/check.js` and deploys `src/`
-to GitHub Pages, served publicly at https://profile.curiouspace.com.
+to GitHub Pages, served publicly at https://prajwal.curiouspace.com.
 
 DNS (Cloudflare): `CNAME profile → prajwal-das.github.io` (proxied or
 DNS-only both work; GitHub terminates TLS for the custom domain).

@@ -20,22 +20,20 @@ sideways-scrolling "proud moments" strip, contact.
 - `manifests/` — k3s manifests: namespace `profile`, Deployment (pinned to
   m1air), Service, cert-manager Certificate, Traefik IngressRoute for
   `profile.curiouspace.com`
-- `.github/workflows/build-push.yml` — merge to main: run `tests/check.js`,
-  build the arm64 image, push `curiouspace/portfolio:latest` (+ `:sha-*`)
-  to Docker Hub
+- `.github/workflows/pages.yml` — merge to main: run `tests/check.js`,
+  deploy `src/` to GitHub Pages (custom domain `profile.curiouspace.com`)
 
 ## Deploy
 
-Rollout stays manual:
+Automatic: every merge to main runs `tests/check.js` and deploys `src/`
+to GitHub Pages, served publicly at https://profile.curiouspace.com.
 
-```sh
-kubectl apply -f manifests/
-# after a merge publishes a fresh image:
-kubectl rollout restart deployment/portfolio -n profile
-```
+DNS (Cloudflare): `CNAME profile → prajwal-das.github.io` (proxied or
+DNS-only both work; GitHub terminates TLS for the custom domain).
 
-Required repo secrets for the workflow: `DOCKERHUB_USERNAME` /
-`DOCKERHUB_TOKEN` (Docker Hub access token, read+write).
+Retired: the old Docker Hub image (`curiouspace/portfolio`) and the k3s
+`manifests/` + `Dockerfile`/`nginx/` are leftovers from the previous
+Tailscale-only hosting and can be removed once Pages is verified live.
 
 ## Swapping the photo
 

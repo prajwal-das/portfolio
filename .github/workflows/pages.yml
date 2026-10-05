@@ -1,5 +1,5 @@
 # Merge to main -> static checks -> deploy src/ to GitHub Pages
-# (https://profile.curiouspace.com via the repo's custom domain).
+# (https://prajwal.curiouspace.com via the repo's custom domain).
 # No build step: the site is plain HTML/CSS/JS.
 
 name: Deploy to GitHub Pages
